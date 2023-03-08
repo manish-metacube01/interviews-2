@@ -36,8 +36,8 @@ export default class EditQuote extends LightningElement {
     .then(() => {
       const event = new ShowToastEvent({
         title: 'Success',
-        message:
-            'Record Updated',
+        message: 'Record Updated',
+        variant: 'Success'
     });
     this.dispatchEvent(event);
     });
