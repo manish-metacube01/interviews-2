@@ -5,6 +5,8 @@ public with sharing class QuoteDto extends BaseDto {
   public Date startDate{get;set;}
   @AuraEnabled
   public String name{get;set;}
+  @AuraEnabled
+  public Decimal totalQuotedAmount{get;set;}
 
   public QuoteDto() {
   }
@@ -14,6 +16,7 @@ public with sharing class QuoteDto extends BaseDto {
     this.name = quote.Name;
     this.startDate = quote.startDate__c;
     this.endDate = quote.EndDate__c;
+    this.totalQuotedAmount = quote.TotalQuotedAmount__c;
   }
 
   public override SObject refreshSo() {

@@ -11,7 +11,7 @@ import saveQuote from '@salesforce/apex/quoteController.saveQuote';
 export default class EditQuote extends LightningElement {
   @api recordId;
   quoteData = {
-    name: "Quote Name",
+    name: "test Quote",
     endDate: 1547250828000,
     startDate: 1547250828000
   };
@@ -24,6 +24,7 @@ export default class EditQuote extends LightningElement {
       this.quoteData = data;
     } else if(error) {
       this.error = error;
+      this.quoteData = {};
     }
   }
 
@@ -42,6 +43,4 @@ export default class EditQuote extends LightningElement {
     this.dispatchEvent(event);
     });
   }
-
-  renderedCallback() {}
 }
